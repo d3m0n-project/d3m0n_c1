@@ -11,5 +11,11 @@ The **first** hacking phone
 ```
 
 ## features
-- feature1
-- feature2
+- opensource operating system ([d3m0nOS](https://github.com/d3m0n-project/d3m0n_os))
+- embed in hacking devices that can perform
+  -  Radio hacking (2.4Ghz)
+  -  Wifi attacks
+  -  physical attacks
+     - BadUSB
+  - Infrared signal copying
+- Easy application system more infos [here](https://github.com/d3m0n-project/d3m0n_os#creating-a-d3m0n-application)
