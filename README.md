@@ -19,3 +19,19 @@ The **first** hacking phone
      - BadUSB
   - Infrared signal copying
 - Easy application system more infos [here](https://github.com/d3m0n-project/d3m0n_os#creating-a-d3m0n-application)
+
+## modules
+### Wireless
+NRF24l01 2.4Ghz module can be used with a range of protocols such as
+- Bluetooth
+- Wifi
+- RF peripherals (keyboards/mouses)
+- Microwave oven
+- Baby monitors/Wireless microphones/Wireless speakers
+- Garage doors
+- Radio-controlled Models
+- Car alarm
+- Radars
+
+### USB
+our device contains a USB port to transmit data, update firmware, and process a [BadUSB](https://en.wikipedia.org/wiki/BadUSB) attack
