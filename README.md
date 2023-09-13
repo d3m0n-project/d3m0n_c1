@@ -35,3 +35,6 @@ NRF24l01 2.4Ghz module can be used with a range of protocols such as
 
 ### USB
 our device contains a USB port to transmit data, update firmware, and process a [BadUSB](https://en.wikipedia.org/wiki/BadUSB) attack
+
+
+### Special thanks to vertydagenius for his help
