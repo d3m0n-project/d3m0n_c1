@@ -7,7 +7,7 @@ The **first** hacking phone
 
 ## 3d preview
 ```stl
-
+ soon
 ```
 
 ## features
