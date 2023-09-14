@@ -1,83 +1,92 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML> <!-- NOT FINISHED -->
 <html>
   <head>
     <title>
-      d3m0n Phone
+      d3m0n phone
     </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <style>
-body{
-	background-color: #1E0059;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg fill-opacity='0.66'%3E%3Ccircle fill='%231E0059' cx='50' cy='0' r='50'/%3E%3Cg fill='%231c0257' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%231a0356' cx='50' cy='100' r='50'/%3E%3Cg fill='%23180454' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23160553' cx='50' cy='200' r='50'/%3E%3Cg fill='%23140751' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%2312084f' cx='50' cy='300' r='50'/%3E%3Cg fill='%2310084e' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%230e094c' cx='50' cy='400' r='50'/%3E%3Cg fill='%230d0a4a' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%230b0a48' cx='50' cy='500' r='50'/%3E%3Cg fill='%230a0b46' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23090b44' cx='50' cy='600' r='50'/%3E%3Cg fill='%23080b43' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23070b41' cx='50' cy='700' r='50'/%3E%3Cg fill='%23070c3f' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23070c3d' cx='50' cy='800' r='50'/%3E%3Cg fill='%23070c3b' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23070b39' cx='50' cy='900' r='50'/%3E%3Cg fill='%23070b37' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23070B35' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
-	background-attachment: fixed;
-	background-size: contain;
-}
-.text{
-	color: #b4aee6;
-}
-.btntxt{
-	color: #de1818;
-}
-.center{
-	display: flex;
-    justify-content: center;
-    align-items: baseline;
-}
-.btntext{
-  position:relative;
-  left:5px;
-}
-
-
-
-
-    </style>
+    <link href="./style.css" rel="stylesheet">
   </head>
   <body>
-    <h1 class="center text">
+	<div class="header">
+    <img class="logo" style="margin-right: 50%;" src="assets/logo_dark.png">
+
+		<div class="paste-button"><a class="dropdown_button"style="text-decoration: none;" href="#get-d3m0n">Get one</a></div>
+
+    <div class="paste-button">
+		  <button class="dropdown_button">Documentation<div class="chevron"></div></button>
+		  <div class="dropdown-content">
+			<a id="top" href="#">d3m0n_os Documentation</a>
+			<a id="middle" href="#">...</a>
+			<a id="bottom" href="#">...</a>
+		  </div>
+		</div>
+
+    <div class="paste-button">
+		  <button class="dropdown_button">Developers<div class="chevron"></div></button>
+		  <div class="dropdown-content">
+			<a id="top" href="#">Application api</a>
+			<a id="middle" href="#">...</a>
+			<a id="bottom" href="#">...</a>
+		  </div>
+		</div>
+
+	</div>
+
+
+  <div class="top-div">
+    <h1 style="display: flex; flex-direction: row; justify-content: center; font-size: 60px; font-weight: 500;">Hacking
+      <ul class="dynamic-txts" style="text-align: left; margin: 0px; transform: translateY(-10px);">
+        <li><span>In your pocket</span></li>
+        <li><span>Everywhere</span></li>
+        <li><span>Easily</span></li>
+        <li><span>The world</span></li>
+      </ul>
+    </h1>
+  
+  
+    
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+  </div>
+
+  
+  
+    <h1 class="center">
     The d3m0n Phone is a multi functioning phone made for hackers.
     </h1>
     
-    <h3 class="center text"><b>
+    <h3 class="center"><b>
    ------------------------- Features: -------------------------
     </h3></b>
-    <p class="center text">
+    <p class="center">
     1. It's open source!  
-      <a href="https://github.com/d3m0n-project/d3m0n_os" class="btntext btntxt" target="_blank">
+      <a href="https://github.com/d3m0n-project/d3m0n_os" class="btntext">
         Source code
       </a>
     </p>
     
-    <p class="center text">
+    <p class="center">
     2. Radio hacking (2.4Ghz),
     </p>
     
-    <p class="center text">
-    3. Wi-Fi pentesting (Deauth, Password Cracking, and more!),
+    <p class="center">
+    3. Wi-Fi pentesting (Deauth attacks, Password Cracking, and more!),
     </p>
     
-    <p class="center text">
+    <p class="center">
     4. Bluetooth sniffing,
     </p>
     
-    <p class="center text">
+    <p class="center">
     5. Data transmission port to allow a badusb attack!
     </p>
-    <h3 class="center text">
+    <h3 class="center">
     -------------------------
     </h3>
-    <p class="center text">
-    More information for this project is on GitHub
-    </p>
-    <br>
-   	<br>
-    <br>
-    <p class="text">
-    <small>Website made by Verty</small>
-      <a href="https://github.com/vertydagenius" class="btntext btntxt" target="_blank">
-        <button type="button" class="btn btn-secondary btn-sm">Verty's GitHub</button>
-      </a>
-    
-    </p>
+    <div id="get-d3m0n">
+      
+    </div>
   </body>
 </html>
