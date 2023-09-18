@@ -1,0 +1,273 @@
+body {
+    color: white;
+    font-family: Noto Sans,Cantarell,sans-serif;
+    margin: 0px;
+    background-color: black;
+    padding: 0px;
+}
+
+.light-mode {
+  background-color: #bfbfbf;
+  color: black;
+
+}
+.light-text {
+	color: black;
+}
+
+.top-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+
+.header {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.center{
+	display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+.btnn {
+  text-decoration: none;
+  padding: 0.1rem;
+  border: 2px solid #FFFFFF;
+}
+.btntext{
+  position:relative;
+  left:5px;
+}
+
+
+/* headers btns */
+
+@keyframes fadein{
+    0% { opacity: 0; }
+    25% { opacity: 0.25; }
+	50% { opacity: 0.5; }
+	75% { opacity: 0.75; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadein{
+    0% { opacity: 0; }
+    25% { opacity: 0.25; }
+	50% { opacity: 0.5; }
+	75% { opacity: 0.75; }
+    100% { opacity: 1; }
+}
+
+.chevron {
+  margin-left: 5px;
+  width: 15px;
+  /* display: flex; */
+  /* position: absolute; */
+  background-color: white;
+  height: 15px;
+  background-image: url("./assets/chevron.png");
+  -webkit-mask: url("./assets/chevron.png") center/contain;
+  /* mask:url("./assets/chevron.png") center/contain; */
+}
+.paste-button {
+  position: relative;
+  display: block;
+  font-family: Noto Sans,Cantarell,sans-serif;
+  padding: 10px 13px;
+  display: inline-block;
+  height: 43px;
+  border: 1px solid transparent;
+  color: var(--text-color-dark);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.dropdown_button:hover {
+	color: #367BF0;
+}
+
+.dropdown_button {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-shadow: 0 0 1px #fff,var(--nav-text-shadow);
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  --nav-text-shadow: 0 0 20px rgba(0, 0, 0, .5);
+  top: 50px;
+  display: none;
+  font-size: 15px;
+  position: absolute;
+  z-index: 1;
+  min-width: 200px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 0px 15px 15px 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  font-family: Noto Sans,Cantarell,sans-serif;
+  line-height: 1.5;
+  font-size: 15px;
+  color: black;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+  /* transition: 0.1s; */
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  color: #367BF0;
+}
+
+.dropdown-content a:focus {
+  color: white;
+}
+
+.dropdown-content #top:hover {
+  border-radius: 0px 13px 0px 0px;
+}
+
+.dropdown-content #bottom:hover {
+  border-radius: 0px 0px 13px 13px;
+}
+
+.paste-button:hover button {
+  border-radius: 15px 15px 0px 0px;
+}
+
+.paste-button:hover .dropdown-content {
+  display: block;
+  -webkit-animation: 0.2s ease 0s normal forwards 1 fadein;
+  animation: 0.2s ease 0s normal forwards 1 fadein;
+}
+
+.dropdown_button:hover .chevron {
+  background:#367BF0;
+}
+
+
+
+/* keytype animation */
+
+.dynamic-txts {
+  text-align: left;
+  /* margin-left: 15px; */
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  text-align: left;
+  color: white;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100px;
+  width: 100%;
+  background: black;
+  border-left: 2px solid white;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: .5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: .5s;
+}
+
+input:checked + .slider {
+  background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
