@@ -49,13 +49,14 @@
     </h1>
 	
 	<span>
-		<span onclick="myFunction()">
-			<input type="Submit" value="Dark/Light mode">
-		</span>
+		<label class="switch">
+			<input type="checkbox" checked="true" onclick="toggle_theme()">
+			<span class="slider"></span>
+		</label>
 	</span>	
 
 	<script>
-	function myFunction() {
+	function toggle_theme() {
 	   var element = document.body;
 	   element.classList.toggle("light-mode");
 	}

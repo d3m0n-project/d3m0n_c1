@@ -9,8 +9,12 @@ body {
 .light-mode {
   background-color: #bfbfbf;
   color: black;
-
 }
+
+.light-mode .dynamic-txts li span::after {
+	background: white;
+}
+
 .light-text {
 	color: black;
 }
@@ -222,11 +226,16 @@ body {
 
 /* The switch - the box around the slider */
 .switch {
-  font-size: 17px;
+  display: block;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  /* size of sliding icon -- sun and moon */
+  --size-of-icon: 1.4em;
+  /* it is like a inline-padding of switch */
+  --slider-offset: 0.3em;
   position: relative;
-  display: inline-block;
-  width: 3.5em;
-  height: 2em;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
 }
 
 /* Hide default HTML checkbox */
@@ -238,36 +247,45 @@ body {
 
 /* The slider */
 .slider {
-  --background: #28096b;
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--background);
-  transition: .5s;
+  background-color: #f4f4f5;
+  transition: .4s;
   border-radius: 30px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 1.4em;
-  width: 1.4em;
-  border-radius: 50%;
-  left: 10%;
-  bottom: 15%;
-  box-shadow: inset 8px -4px 0px 0px #fff000;
-  background: var(--background);
-  transition: .5s;
+  height: var(--size-of-icon,1.4em);
+  width: var(--size-of-icon,1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset,0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+  ;
+ transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #522ba7;
+  background-color: #303136;
 }
 
 input:checked + .slider:before {
-  transform: translateX(100%);
-  box-shadow: inset 15px -4px 0px 15px #fff000;
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+:root {
+	--color-light-bg: white;
+	--color-light-text: black;
+	--color-dark-bg: black;
+	--color-dark-text: white;
 }
