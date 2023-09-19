@@ -40,27 +40,77 @@
 	<br>
   <div class="top-div">
     <h1 class="light-text" style="display: flex; flex-direction: row; justify-content: center; font-size: 60px; font-weight: 500;">
-      <ul class="dynamic-txts" style="text-align: left; margin: 0px; transform: translateY(-10px);">
+      <ul class="dynamic-txts dynamictxts" style="text-align: left; margin: 0px; transform: translateY(-10px);">
         <li><span>Hack in your pocket.</span></li>
         <li><span>Hack everywhere.</span></li>
-        <li><span>Hack easily.</span></li>
         <li><span>Hack the world.</span></li>
+		<li><span>Hack easily.</span></li>
       </ul>
     </h1>
 	
 	<span>
-		<label class="switch">
-			<input type="checkbox" checked="true" onclick="toggle_theme()">
-			<span class="slider"></span>
-		</label>
+		<span onclick="myFunction(); dark();" id="darkmod">
+			<input type="Submit" value="Light mode">
+		</span>
 	</span>	
 
 	<script>
-	function toggle_theme() {
+function function() {
+   var element = document.body;
+   element.classList.toggle("dynamictxts");
+}
+	</script>
+
+	<script>
+	function myFunction() {
 	   var element = document.body;
 	   element.classList.toggle("light-mode");
 	}
 	</script>
+	
+	<script>
+	function dark() {
+	  var style = document.createElement('style');
+	  style.innerHTML = `
+	  .dynamictxts li span::after{
+	    content: "";
+	    position: absolute;
+	    left: 0;
+	    height: 100px;
+	    width: 100%;
+	    background: #bfbfbf;
+	    border-left: 2px solid white;
+	    animation: typing 3s steps(10) infinite;
+	  }
+	  `;
+	  document.head.appendChild(style);
+	}
+	</script>
+	
+	<script>
+	function light() {
+	  var style = document.createElement('style');
+	  style.innerHTML = `
+	  .dynamictxts li span::after{
+	    content: "";
+	    position: absolute;
+	    left: 0;
+	    height: 100px;
+	    width: 100%;
+	    background: black;
+	    border-left: 2px solid white;
+	    animation: typing 3s steps(10) infinite;
+	  }
+	  `;
+	  document.head.appendChild(style);
+	}
+	</script>
+	
+	<span>
+		<span onclick="myFunction(); light();">
+			<input type="Submit" value="Dark mode">
+		</span>
+	</span>	
 
     <h1 class="center">
     The d3m0n Phone is a multi functioning phone made for hackers.
@@ -99,7 +149,11 @@
     </div>
 	
 
-
-    <h1>Thanks for <a href="https://github.com/VertyDaGenius">VertyDaGenius</a> for his huge contribution for this site</h1>
+	<br>
+	<br>
+	<br>
+	<b>
+    <h8>Thanks to <a href="https://github.com/VertyDaGenius">VertyDaGenius</a> for his huge contribution for this site.</h8>
+	</b>
   </body>
 </html>
