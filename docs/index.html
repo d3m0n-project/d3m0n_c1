@@ -24,8 +24,8 @@
     <div class="paste-button">
 		  <button class="dropdown_button">Developers<div class="chevron"></div></button>
 		  <div class="dropdown-content">
-			<a id="top" href="./studio.html">App Studio</a>
-			<a id="middle" href="#">Application api</a>
+			<a id="top" href="#">Application api</a>
+			<a id="middle" href="#">...</a>
 			<a id="bottom" href="#">...</a>
 		  </div>
 		</div>
@@ -40,7 +40,7 @@
 	<br>
   <div class="top-div">
     <h1 class="light-text" style="display: flex; flex-direction: row; justify-content: center; font-size: 60px; font-weight: 500;">
-      <ul class="dynamic-txts dynamictxts" style="text-align: left; margin: 0px; transform: translateY(-10px);">
+      <ul class="dynamic-txts dynamictxts dynamictxtss" style="text-align: left; margin: 0px; transform: translateY(-10px);">
         <li><span>Hack in your pocket.</span></li>
         <li><span>Hack everywhere.</span></li>
         <li><span>Hack the world.</span></li>
@@ -49,68 +49,41 @@
     </h1>
 	
 	<span>
-		<span onclick="myFunction(); dark();" id="darkmod">
-			<input type="Submit" value="Light mode">
+		<span onclick="myFunction();" id="toggle">
+			<input type="Submit" value="Light Mode Toggle">
 		</span>
 	</span>	
 
+
 	<script>
-function function() {
-   var element = document.body;
-   element.classList.toggle("dynamictxts");
+var isDynamicTextVisible = false; 
+function myFunction() {
+    var element = document.body;
+    element.classList.toggle("light-mode");
+    if (!isDynamicTextVisible) {
+        var style = document.createElement('style');
+        style.innerHTML = `
+            .dynamictxts li span::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                height: 100px;
+                width: 100%;
+                background: #bfbfbf;
+                border-left: 2px solid white;
+                animation: typing 3s steps(10) infinite;
+            }
+        `;
+        document.head.appendChild(style);
+    } else {
+        var styleElement = document.querySelector('style');
+        if (styleElement) {
+            document.head.removeChild(styleElement);
+        }
+    }
+    isDynamicTextVisible = !isDynamicTextVisible;
 }
 	</script>
-
-	<script>
-	function myFunction() {
-	   var element = document.body;
-	   element.classList.toggle("light-mode");
-	}
-	</script>
-	
-	<script>
-	function dark() {
-	  var style = document.createElement('style');
-	  style.innerHTML = `
-	  .dynamictxts li span::after{
-	    content: "";
-	    position: absolute;
-	    left: 0;
-	    height: 100px;
-	    width: 100%;
-	    background: #bfbfbf;
-	    border-left: 2px solid white;
-	    animation: typing 3s steps(10) infinite;
-	  }
-	  `;
-	  document.head.appendChild(style);
-	}
-	</script>
-	
-	<script>
-	function light() {
-	  var style = document.createElement('style');
-	  style.innerHTML = `
-	  .dynamictxts li span::after{
-	    content: "";
-	    position: absolute;
-	    left: 0;
-	    height: 100px;
-	    width: 100%;
-	    background: black;
-	    border-left: 2px solid white;
-	    animation: typing 3s steps(10) infinite;
-	  }
-	  `;
-	  document.head.appendChild(style);
-	}
-	</script>
-	
-	<span>
-		<span onclick="myFunction(); light();">
-			<input type="Submit" value="Dark mode">
-		</span>
-	</span>	
 
     <h1 class="center">
     The d3m0n Phone is a multi functioning phone made for hackers.
