@@ -21,7 +21,7 @@ The **first** hacking phone
 - Easy application system more infos [here](https://github.com/d3m0n-project/d3m0n_os#creating-a-d3m0n-application)
 
 ## Specs
-### Wireless
+### 🛜 Wireless
 NRF24l01 2.4Ghz module can be used with a range of protocols such as
 - Bluetooth
 - Wifi
@@ -46,7 +46,7 @@ A micro HDMI port is available on the left side to display things on an another 
 ### Camera
 Only on back of the phone. 1080p camera
 
-### Battery
+### ⚡ Battery
 5v/2.5A?
 3.7V+transformer?
 idk. don't ask
