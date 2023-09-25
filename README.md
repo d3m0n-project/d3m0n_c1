@@ -33,7 +33,7 @@ NRF24l01 2.4Ghz module can be used with a range of protocols such as
 - Car alarm
 - Radars
 
-### USB
+### 🔌 USB
 Our device contains two micro usb USB ports on the left side to transmit data, update firmware, and process a [BadUSB](https://en.wikipedia.org/wiki/BadUSB) attack and one usb-type C port
 
 ### 💬 Communication
@@ -50,6 +50,9 @@ Only on back of the phone. 1080p camera
 5v/2.5A?
 3.7V+transformer?
 idk. don't ask
+
+### 🔉 Sound
+idk if it's enabled yet
 
 
 ### Special thanks to vertydagenius for his help
