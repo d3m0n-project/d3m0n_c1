@@ -20,7 +20,7 @@ The **first** hacking phone
   - Infrared signal copying
 - Easy application system more infos [here](https://github.com/d3m0n-project/d3m0n_os#creating-a-d3m0n-application)
 
-## modules
+## Specs
 ### Wireless
 NRF24l01 2.4Ghz module can be used with a range of protocols such as
 - Bluetooth
@@ -34,7 +34,22 @@ NRF24l01 2.4Ghz module can be used with a range of protocols such as
 - Radars
 
 ### USB
-our device contains a USB port to transmit data, update firmware, and process a [BadUSB](https://en.wikipedia.org/wiki/BadUSB) attack
+Our device contains two micro usb USB ports on the left side to transmit data, update firmware, and process a [BadUSB](https://en.wikipedia.org/wiki/BadUSB) attack and one usb-type C port
+
+### Communication
+We're using a IoT-GA6-B module for GSM things (send sms, mms and calls)
+
+### Display
+Graphics are displayed on a 480x640 TFT touchscreen
+A micro HDMI port is available on the left side to display things on an another display
+
+### Camera
+Only on back of the phone. 1080p camera
+
+### Battery
+5v/2.5A?
+3.7V+transformer?
+idk. don't ask
 
 
 ### Special thanks to vertydagenius for his help
