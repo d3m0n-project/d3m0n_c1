@@ -36,14 +36,14 @@ NRF24l01 2.4Ghz module can be used with a range of protocols such as
 ### USB
 Our device contains two micro usb USB ports on the left side to transmit data, update firmware, and process a [BadUSB](https://en.wikipedia.org/wiki/BadUSB) attack and one usb-type C port
 
-### Communication
+### 💬 Communication
 We're using a IoT-GA6-B module for GSM things (send sms, mms and calls)
 
 ### Display
 Graphics are displayed on a 480x640 TFT touchscreen
 A micro HDMI port is available on the left side to display things on an another display
 
-### Camera
+### 📷 Camera
 Only on back of the phone. 1080p camera
 
 ### ⚡ Battery
