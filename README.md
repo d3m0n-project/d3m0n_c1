@@ -21,7 +21,7 @@ The **first** hacking phone
 - Easy application system more infos [here](https://github.com/d3m0n-project/d3m0n_os#creating-a-d3m0n-application)
 
 ## Specs
-### 🛜 Wireless
+### 📡 Wireless
 NRF24l01 2.4Ghz module can be used with a range of protocols such as
 - Bluetooth
 - Wifi
@@ -39,7 +39,7 @@ Our device contains two micro usb USB ports on the left side to transmit data, u
 ### 💬 Communication
 We're using a IoT-GA6-B module for GSM things (send sms, mms and calls)
 
-### Display
+### 📱 Display
 Graphics are displayed on a 480x640 TFT touchscreen
 A micro HDMI port is available on the left side to display things on an another display
 
