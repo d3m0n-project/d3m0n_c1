@@ -1,0 +1,19 @@
+body {
+	background-color: black;
+	color: white;
+	background-image: url( 'image.svg' );
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+	text-align: center;
+}
+.box {
+  background-color: black;
+  width: 300px;
+  border: 5px solid red;
+  padding: 50px;
+  margin: 20px auto;
+  text-align: center;
+}
