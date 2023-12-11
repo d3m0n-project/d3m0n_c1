@@ -21,6 +21,13 @@ The **first** hacking phone
 - Easy application system more infos [here](https://github.com/d3m0n-project/d3m0n_os#creating-a-d3m0n-application)
 
 ## Specs
+### 📚 Misc
+width: 5cm/1,96in
+height: 10cm/3,93in
+weight: 250g/0,55lbs
+battery autonomy: 0h
+
+
 ### 📡 Wireless
 NRF24l01 2.4Ghz module can be used with a range of protocols such as
 - Bluetooth
