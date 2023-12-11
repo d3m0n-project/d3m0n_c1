@@ -32,6 +32,7 @@ NRF24l01 2.4Ghz module can be used with a range of protocols such as
 - Radio-controlled Models
 - Car alarm
 - Radars
+
 Contains also a small antenna for FM spoofing
 
 ### 🔌 USB
