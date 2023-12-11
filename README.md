@@ -13,7 +13,7 @@ The **first** hacking phone
 ## features
 - opensource operating system ([d3m0nOS](https://github.com/d3m0n-project/d3m0n_os))
 - embed in hacking devices that can perform
-  -  Radio hacking (2.4Ghz)
+  -  Radio hacking (2.4Ghz) and FM
   -  Wifi attacks
   -  physical attacks
      - BadUSB
