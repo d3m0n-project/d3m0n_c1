@@ -8,7 +8,7 @@ body {
 
 .light-mode {
   background-color: #bfbfbf;
-  color: black;
+  color: black !important;
 
 }
 .light-text {
