@@ -77,7 +77,7 @@ AND MAYBE OWN MOTHERBOARD MADE FROM SCRATCH using ARM micoprocessors
 
 ### Special thanks to vertydagenius for his help
 
-# Examples of any other homemade cellular phones
+# Examples of any other non factory made cellular phones
 These are ugly, huge and super badly made compared to d3m0n phones </br>
 <img src="https://github.com/d3m0n-project/d3m0n_c1/assets/71982379/1e4c8f40-6839-4a9a-a646-9421ca6771ee" style="height: 200px">
 <img src="https://github.com/d3m0n-project/d3m0n_c1/assets/71982379/93444e6c-4ee3-448a-83d6-dbd0336d217f" style="height: 200px">
