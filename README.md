@@ -3,7 +3,7 @@
 ⚠️ Currently under developement (We had to remake everything from the beginning in C and C++ for better performance) ⚠️
 
 The **first** hacking phone 
-<img height="400" src="https://github.com/d3m0n-project/d3m0n_c1/assets/71982379/5912dc56-461c-4415-a69e-8ceade19bfd1">
+<img height="300" src="https://github.com/d3m0n-project/d3m0n_c1/assets/71982379/5912dc56-461c-4415-a69e-8ceade19bfd1">
 
 ## 3d preview
 ```stl
