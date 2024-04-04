@@ -30,7 +30,7 @@ battery autonomy: 0h
 
 
 ### 📡 Wireless
-NRF24l01 2.4Ghz module can be used with a range of protocols such as
+2.4Ghz radio frequency can be used with a range of protocols such as
 - Bluetooth
 - Wifi
 - RF peripherals (keyboards/mouses)
@@ -64,6 +64,8 @@ idk. don't ask
 ### 🔉 Sound
 idk if it's enabled yet
 
+### 👨‍💻 Development
+Pins for hardware developement and debug will be added on the back of d3m0n phones in future versions
 
 # Improvements in the future versions
 - better battery time
