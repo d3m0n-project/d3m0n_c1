@@ -1,53 +1,56 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>
-			d3m0n app studio
-		</title>
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>d3m0n App Studio</title>
+    <link rel="stylesheet" href="./style.css"></link>
+</head>
+<body>
+    <h1>d3m0n App Studio</h1>
 
-			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-			<link href="./studioc.css" rel="stylesheet">
-			<script src="src/canva.js"></script>
-	</head>
-	<body>
-		<!-- logo will be added soon -->
-		<img class="logo" src="">
-		
-		<div class="box">
-			
-			<a><!-- add an onclick or href, you can also change these buttons if you want-->
-			<button type="button" class="btn btn-danger top_bar_btn">File</button>
-			</a>
-			
-			<a>
-			<button type="button" class="btn btn-danger top_bar_btn">Edit</button>
-			</a>
-			
-			<a>
-			<button type="button" class="btn btn-danger top_bar_btn">Settings</button>
-			</a>
-			
-			<a>
-			<button type="button" class="btn btn-danger top_bar_btn">Tools</button>
-			</a>
-			
-			<a>
-			<button type="button" class="btn btn-danger top_bar_btn">Help</button>
-			</a>
-			
-		</div>
-		<div style="display: flex; flex-direction: row;">
-			<div style="width: 50%; height: 80vh; text-align: center; justify-content: center; display: flex; align-items: center; background: white">
-				<h1 id="dimentions">480x640</h1>
-				<div id="window" onmouseleave="resize()" onmousemove="resize()" class="canva" style="width: 350px; height: 200px; resize: both; overflow: hidden;border: 1px solid black;">
-				</div>
-			</div>
-			<div style="width: 50%; height: 80vh;">
-				<div class="drag">
-					
-				</div>
-			</div>
-		</div>
-	</body>
+    <div id="appContainer">
+        <div id="control_editor">
+            <div style="width: 100%;" id="generalAttributes">
+                <p>General Attributes:</p>
+
+                <div style="width: 90%; display: block; overflow: hidden;">name:<input style="float: right; width: 60%;" type="text" id="edit-name" value="" /></div>
+                <div style="width: 90%; display: block; overflow: hidden;" >color:<input style="float: right; width: 60%;" type="color" id="edit-color" value="" /></div>
+                <div style="width: 90%; display: block; overflow: hidden;">bg_color:<input style="float: right; width: 60%;" type="color" id="edit-bg_color" value="" /></div>
+                <div style="width: 90%; display: block; overflow: hidden;" >visible:<input style="float: right; width: 60%;" type="checkbox" id="edit-visible" value="" /></div>
+                <div style="width: 90%; display: block; overflow: hidden;" >enabled:<input style="float: right; width: 60%;" type="checkbox" id="edit-enabled" value="" /></div>
+            
+                <div style="width: 90%; display: block; overflow: hidden;" >margin_top:<input style="float: right; width: 60%;" type="number" id="edit-margin_top" value="" /></div>
+                <div style="width: 90%; display: block; overflow: hidden;" >margin_left:<input style="float: right; width: 60%;" type="number" id="edit-margin_left" value="" /></div>
+                <div style="width: 90%; display: block; overflow: hidden;" >margin_right:<input style="float: right; width: 60%;" type="number" id="edit-margin_right" value="" /></div>
+                <div style="width: 90%; display: block; overflow: hidden;" >margin_bottom:<input style="float: right; width: 60%;" type="number" id="edit-margin_bottom" value="" /></div>
+
+                // location="x, y";
+                // location="[top/top_left/top_right/bottom/bottom_left/bottom_right/left/right/center]";
+                <div style="width: 90%; display: block; overflow: hidden;">location:<input style="float: right; width: 60%;" type="number" id="edit-margin_bottom" value="" /></div>
+
+
+                
+            </div>
+
+        </div>
+        <div style="width: 60%; flex-direction: row; display: flex;">
+            <div id="drop_zone">Drop elements here</div>
+            <div id="draggableElements">
+            <div style="padding: 10px; background: red; margin-bottom: 10px;" onclick="createDraggableElement('Text')">Text</div>
+            <div style="padding: 10px; background: red; margin-bottom: 10px;" onclick="createDraggableElement('Button')">Button</div>
+            <div style="padding: 10px; background: red; margin-bottom: 10px;" onclick="createDraggableElement('Image')">Image</div>
+        </div>
+        </div>
+        
+        
+    </div>
+    
+    <button id="addElement" onclick="createDraggableElement('Text')">Add Draggable Element</button>
+    <button id="build">Build</button>
+    <pre id="pseudocode"></pre>
+
+
+    <script src="./app.js"></script>
+</body>
 </html>
