@@ -99,6 +99,11 @@
                 
                 
             </div>
+			<div style="width: 100%;" id="customEdit">
+			<!-- document.getElementById("Text_y6j9df").children[0].innerText -->
+				<div style="width: 90%; display: block; overflow: hidden;">content:<input style="float: right; width: 50%;" type="text" id="edit-content" value="" onchange="editChild('innerText', document.getElementById('edit-content').value, '', 0)" /></div>
+                
+			</div>
 
         </div>
         <div style="width: 60%; flex-direction: row; display: flex;">
@@ -111,7 +116,7 @@
         </div>
         
         
-    </div>
+    </div
     
     <button id="addElement" onclick="createDraggableElement('Text')">Add Draggable Element</button>
     <button id="build">Build</button>

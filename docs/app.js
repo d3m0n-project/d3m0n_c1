@@ -32,6 +32,35 @@ const Controls = {
     },
 };
 
+function editChild(property, value, subProperty="", increase=0, pixel=false) {
+    var element = document.getElementById(currentID).children[0];
+    if (element) {
+        if(increase > 0) {
+            if(subProperty!=""){ 
+                element[property][subProperty] += value;
+            } else {
+                element[property] += value;
+            }
+        }
+        else if(increase < 0) {
+            if(subProperty!=""){ 
+                element[property][subProperty] -= value;
+            } else {
+                element[property] -= value;
+            }
+        }
+        else if(increase == 0){
+            if(subProperty!=""){ 
+                element[property][subProperty] = value;
+            } else {
+                element[property] = value;
+            }
+        }
+    } else {
+        console.error("Element with ID '" + elementId + "' not found.");
+    }
+}
+
 function edit(property, value, subProperty="", increase=0, pixel=false) {
     var element = document.getElementById(currentID);
     if (element) {
@@ -123,14 +152,27 @@ function setPercentMode2(e) {
         inputElem.value = Math.round(inputElem.value/100*320);
     }
 }
-
+function hideCustomEdits() {
+	var editFields = document.getElementsById("customEdit");
+	for(i=0; i < editFields.children.length) {
+		
+}
 function loadEdit(type) {
-    var editFields = document.getElementsById("control_editor");
-
+    var editFields = document.getElementsById("customEdit");
+	
+	
+	
     if(!type in Controls) {
         alert("Invalid control type");
         return;
     }
+	
+	
+	switch(type) {
+		case "Text":
+			
+			break;
+	}
 
     // displays GeneralAttributes
 
