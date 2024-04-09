@@ -9,24 +9,108 @@ var currentID = "";
 
 
 const Controls = {
-    "Text": {
-        "defaultHTML": "<h2 style='width: 50px; height: 25px; '>Text</h2>",
+    "TextBox": {
+        "defaultHTML": "<input style='width: 100%; height: 100%; '>TextBox</input>",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/TextBox.md",
+        "edit": ["content", "font_size", "bold", "type", "text_align"],
+        "defaultWidth": 50,
+        "defaultHeight": 25
+    },
+    "ProgressBar": {
+        "defaultHTML": "<progress max='100' value='0'></progress>",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/ProgressBar.md",
+        "edit": ["min", "value", "max"],
+        "defaultWidth": 50,
+        "defaultHeight": 25
+    },
+    "CheckBox": {
+        "defaultHTML": "<input type='checkbox'></input>",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/CheckBox.md",
+        "edit": ["text_align", "font_size", "checked", "content"],
+        "defaultWidth": 50,
+        "defaultHeight": 25
+    },
+    "RawHtml": {
+        "defaultHTML": "",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/RawHtml.md",
+        "edit": ["HTML"],
+        "defaultWidth": 50,
+        "defaultHeight": 50
+    },
+    "WebView": {
+        "defaultHTML": "",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/WebView.md",
+        "edit": ["url"],
+        "defaultWidth": 50,
+        "defaultHeight": 50
+    },
+    "Rect": {
+        "defaultHTML": "",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/Rect.md",
+        "edit": ["scroll"],
+        "defaultWidth": 50,
+        "defaultHeight": 50
+    },
+    "Switch": {
+        "defaultHTML": "",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/Rect.md",
+        "edit": ["text_align", "font_size", "checked", "content"],
+        "defaultWidth": 50,
+        "defaultHeight": 50
+    },   
+    "RadioButton": {
+        "defaultHTML": "<progress max='100' value='0'></progress>",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/ProgressBar.md",
+        "edit": ["text_align", "font_size", "checked", "content"],
+        "defaultWidth": 50,
+        "defaultHeight": 25
+    },
+    "ListView": {
+        "defaultHTML": "<h2 style='color: red; width: 100%; height: 100%; '>soon...</h2>",
         "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/Text.md",
-        "edit": ["content", "font_size"],
+        "edit": [],
+        "defaultWidth": 50,
+        "defaultHeight": 25
+    },
+    "Text": {
+        "defaultHTML": "<h2 style='width: 100% height: 100%; '>Text</h2>",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/Text.md",
+        "edit": ["content", "font_size", "bold", "text_align"],
         "defaultWidth": 50,
         "defaultHeight": 25
     },
     "Image": {
-        "defaultHTML": "<img src='./default.png' style='width: 20px; height: 20px;'>",
+        "defaultHTML": "<img src='./assets/logo_dark.png' style='width: 100%; height: 100%;'>",
         "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/Image.md",
-        "edit": ["src"],
+        "edit": ["src", "mode"],
         "defaultWidth": 50,
         "defaultHeight": 50
     },
     "Button": {
-        "defaultHTML": "<button style='width: 100px; height: 50px;'>Button</button>",
+        "defaultHTML": "<button style='width: 100%; height: 100%;'>Button</button>",
         "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/Button.md",
         "edit": ["content", "font_size"],
+        "defaultWidth": 50,
+        "defaultHeight": 25
+    },
+    "RoundButton": {
+        "defaultHTML": "<button style='width: 100%; height: 100%;'>RoundButton</button>",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/RoundButton.md",
+        "edit": ["content", "font_size", "text_align", "image", "radius"],
+        "defaultWidth": 50,
+        "defaultHeight": 25
+    },
+    "Vscroll": {
+        "defaultHTML": "",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/Vscroll.md",
+        "edit": ["bar"],
+        "defaultWidth": 50,
+        "defaultHeight": 25
+    },
+    "Hscroll": {
+        "defaultHTML": "",
+        "doc": "https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/Hscroll.md",
+        "edit": ["bar"],
         "defaultWidth": 50,
         "defaultHeight": 25
     },
@@ -153,13 +237,15 @@ function setPercentMode2(e) {
     }
 }
 function hideCustomEdits() {
-	var editFields = document.getElementsById("customEdit");
-	for(i=0; i < editFields.children.length) {
+	var editFields = document.getElementById("customEdit");
+	for(i=0; i < editFields.children.length; i++) {
+        editFields.children[i].style.display = "none"
+    }
 		
 }
 function loadEdit(type) {
-    var editFields = document.getElementsById("customEdit");
-	
+    var editFields = document.getElementById("customEdit");
+	hideCustomEdits();
 	
 	
     if(!type in Controls) {
@@ -167,40 +253,28 @@ function loadEdit(type) {
         return;
     }
 	
-	
-	switch(type) {
-		case "Text":
-			
-			break;
-	}
+	for(i=0; i<Controls[type]["edit"].length; i++) {
+        var element = Controls[type]["edit"][i];
+        if(element != undefined) { 
+            try {
+                document.getElementById("customEdit-"+element).style.display = "block";
+            } catch(e) {
+                console.log("customEdit-"+element+" is not defined");
+            }
+            
+            console.log(element);
+        }
+    }
 
     // displays GeneralAttributes
 
-// name="ControlName";
-// visible="[true/false]";
-// enabled="[true/false]";
+    // parent="ControlName";
+}
 
-// parent="ControlName";
-
-// margin_top="10";
-// margin_left="20";
-// margin_right="5";
-// margin_bottom="25";
-
-// location="x, y";
-// location="[top/top_left/top_right/bottom/bottom_left/bottom_right/left/right/center]";
-
-// color="white";
-// color="255, 255, 255";
-
-// bg_color="black";
-// bg_color="0, 0, 0";
-
-// width="20";
-// width="10%";
-
-// height="10";
-// width="5%";
+function setThemeIcon(path) {
+    document.getElementById("edit-font_size").value = 'path';
+    // https://api.github.com/repos/d3m0n-project/d3m0n_os/contents/rootfs/usr/share/d3m0n/themes/default_dark/icons
+    
 }
 
 function createDraggableElement(type) {
@@ -236,6 +310,8 @@ function createDraggableElement(type) {
         startX = event.clientX;
         startY = event.clientY;
         currentID = draggable.id;
+
+        loadEdit(type);
 
         document.getElementById("edit-name").value = draggable.id;
         document.getElementById("edit-width").value = parseInt(draggable.style.width);

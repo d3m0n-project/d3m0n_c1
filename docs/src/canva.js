@@ -5,23 +5,21 @@ function resize()
 	let width = box.offsetWidth;
 	let height = box.offsetHeight;
 	document.getElementById("dimentions").innerHTML = width+"x"+height;
-	// width: 480px;
-	// height: 640px;
-	if(width > 480)
+	if(width > 1000)
 	{
-		document.getElementById('window').style.width = "480px";
+		document.getElementById('window').style.width = "1000px";
 	}
 	if(height > 640)
 	{
 		document.getElementById('window').style.height = "640px";
 	}
-	if(width < 48)
+	if(width < 350)
 	{
-		document.getElementById('window').style.width = "48px";
+		document.getElementById('window').style.width = "350px";
 	}
-	if(height < 64)
+	if(height < 200)
 	{
-		document.getElementById('window').style.height = "64px";
+		document.getElementById('window').style.height = "200px";
 	}
 }
 

@@ -20,6 +20,18 @@ body {
   padding: 5px;
 }
 
+.themeIconItem {
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: #323232;
+  padding: 0px;
+  flex-direction: column;
+  display: flex;
+  padding: 10px;
+}
+
 #appContainer {
   justify-content: center;
   width: 100%;

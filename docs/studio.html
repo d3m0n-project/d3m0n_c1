@@ -6,7 +6,7 @@
     <title>d3m0n App Studio</title>
     <link rel="stylesheet" href="./style.css"></link>
 </head>
-<body>
+<body onload="hideCustomEdits()">
     <h1>d3m0n App Studio</h1>
 
     <div id="appContainer">
@@ -101,9 +101,20 @@
             </div>
 			<div style="width: 100%;" id="customEdit">
 			<!-- document.getElementById("Text_y6j9df").children[0].innerText -->
-				<div style="width: 90%; display: block; overflow: hidden;">content:<input style="float: right; width: 50%;" type="text" id="edit-content" value="" onchange="editChild('innerText', document.getElementById('edit-content').value, '', 0)" /></div>
+				<div id="customEdit-content" style="width: 90%; display: block; overflow: hidden;">content:<input style="float: right; width: 50%;" type="text" id="edit-content" value="" onchange="editChild('innerText', document.getElementById('edit-content').value, '', 0)" /></div>
+                <div id="customEdit-font_size" style="width: 90%; display: block; overflow: hidden;">font_size:<input style="float: right; width: 50%;" type="number" id="edit-font_size" value="" onchange="editChild('style', document.getElementById('edit-font_size').value+'px', 'font-size', 0)" /></div>
+                <div id="customEdit-mode" style="width: 90%; display: block; overflow: hidden;">mode:
+                    <select id="edit-mode" onchange="editImgMode(document.getElementById('edit-mode').value)">
+                        <option>stretch</option>
+                        <option>zoom</option>
+                        <option>auto_size</option>
+                        <option>center</option>
+                    </select>
+                </div>
                 
-			</div>
+                <div id="customEdit-src" style="width: 90%; display: block; overflow: hidden;">src:<input style="float: right; width: 50%;" type="number" id="edit-font_size" value="" onchange="editChild('src', document.getElementById('edit-src').value, '', 0)" />
+                <img src="./assets/add.png" style="float: right; width: 20px; height: 20px;" onclick="document.getElementById('iconSelector').style.display = 'block';"></div>
+            </div>
 
         </div>
         <div style="width: 60%; flex-direction: row; display: flex;">
@@ -122,7 +133,37 @@
     <button id="build">Build</button>
     <pre id="pseudocode"></pre>
 
+    <div id="iconSelector" style="flex-direction: center; display: none; background: grey; width: 100%; height: 100%; position: absolute; z-index: 9999999; opacity: 0.9; top: 0px; left: 0px;">
+        <h2 style="margin-top: 20px; margin-left: 20px;">theme icon</h2>
+        <div id="themeIconsList" style="overflow-x: hidden; align-items: center; justify-content: center; overflow-y: scroll; display: flex; flex-direction: row; flex-wrap: wrap;">
+            <!-- <div class="themeIconItem">
+                <img style="width: 80%; height: 80%;" src="https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/themes/default_dark/icons/contacts.png?raw=true">
+                <h3 style="margin: 0px;">Test</h3>
+            </div> -->
+        </div>
+        
+    </div>
 
     <script src="./app.js"></script>
+    <script>
+        fetch("https://api.github.com/repos/d3m0n-project/d3m0n_os/contents/rootfs/usr/share/d3m0n/themes/default_dark/icons").then(response => response.json())
+        .then(data => {
+            for(i=0; i<data.length; i++) {
+                var name = data[i]["name"];
+                var url = data[i]["download_url"];
+
+                var iconName = name.replace(".png", "");
+                if(!name.endsWith('Zone.Identifier')) {
+                    document.getElementById('themeIconsList').innerHTML += `
+<div class="themeIconItem" onclick="setThemeIcon(`+iconName+`)">
+    <img style="width: 50%; height: 50%;" src="`+url+`">
+    <h3 style="margin: 0px;">`+iconName+`</h3>
+</div>`;
+                    console.log(name, url);
+                }
+                
+            }
+        })
+    </script>
 </body>
 </html>
