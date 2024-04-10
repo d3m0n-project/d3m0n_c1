@@ -6,7 +6,7 @@
     <title>d3m0n App Studio</title>
     <link rel="stylesheet" href="./style.css"></link>
 </head>
-<body onload="hideCustomEdits()">
+<body onload="hideCustomEdits(); document.getElementById('generalAttributes').style.display = 'none';">
     <h1>d3m0n App Studio</h1>
 
     <div id="appContainer">
@@ -14,38 +14,38 @@
             <div style="width: 100%;" id="generalAttributes">
                 <p>General Attributes:</p>
 
-                <div style="width: 90%; display: block; overflow: hidden;">name:<input style="float: right; width: 50%;" type="text" id="edit-name" value="" onchange="edit('id', document.getElementById('edit-name').value, '', 0)" /></div>
+                <div style="width: 90%; display: block; overflow: hidden;">name:<input style="float: right; width: 50%;" type="text" id="edit-name" value="" onchange="edit('id', this.value, '', 0)" /></div>
                 <div style="width: 90%; display: block; overflow: hidden;" >visible:<input style="float: right; width: 50%;" type="checkbox" id="edit-visible" checked="true" /></div>
                 <div style="width: 90%; display: block; overflow: hidden;" >enabled:<input style="float: right; width: 50%;" type="checkbox" id="edit-enabled" checked="true" /></div>
                 
                 </br>
-                <div style="width: 90%; display: block; overflow: hidden;">width:<input style="width: 50%; float: right;" type="number" id="edit-width" onchange="edit('style', document.getElementById('edit-width').value+'px', 'width', 0)" value="0" />
+                <div style="width: 90%; display: block; overflow: hidden;">width:<input style="width: 50%; float: right;" type="number" id="edit-width" onchange="edit('style', this.value+'px', 'width', 0)" value="0" />
                     <input style="float: right;" type="checkbox" id="edit-width-percent" onchange="setPercentMode(event)"></input>
                     <p style="float: right; margin: 0px;">%</p>
                 </div>
-                <div style="width: 90%; display: block; overflow: hidden;">height:<input style="float: right; width: 50%;" type="number" id="edit-height" onchange="edit('style', document.getElementById('edit-height').value+'px', 'height', 0)" value="0" />
+                <div style="width: 90%; display: block; overflow: hidden;">height:<input style="float: right; width: 50%;" type="number" id="edit-height" onchange="edit('style', this.value+'px', 'height', 0)" value="0" />
                     <input style="float: right;" type="checkbox" id="edit-height-percent" onchange="setPercentMode2(event)"></input>
                     <p style="float: right; margin: 0px;">%</p>
                 </div>
 
                 </br>
-                <div style="width: 90%; display: block; overflow: hidden;" >color:<input style="float: right; width: 50%;" type="color" id="edit-color" value="#000000" onchange="edit('style', document.getElementById('edit-color').value, 'color')"/></div>
-                <div style="width: 90%; display: block; overflow: hidden;">bg_color:<input style="float: right; width: 50%;" type="color" id="edit-bg_color" value="#000000" onchange="edit('style', document.getElementById('edit-bg_color').value, 'background')"/></div>
+                <div style="width: 90%; display: block; overflow: hidden;" >color:<input style="float: right; width: 50%;" type="color" id="edit-color" value="#000000" onchange="edit('style', this.value, 'color')"/></div>
+                <div style="width: 90%; display: block; overflow: hidden;">bg_color:<input style="float: right; width: 50%;" type="color" id="edit-bg_color" value="#000000" onchange="edit('style', this.value, 'background')"/></div>
                 </br>
                
-                <div style="width: 90%; display: block; overflow: hidden;">margin_top:<input style="float: right; width: 50%;" type="number" id="edit-margin_top" value="0" onchange="edit('style', document.getElementById('edit-margin_top').value+'px', 'top', 1)"/>
+                <div style="width: 90%; display: block; overflow: hidden;">margin_top:<input style="float: right; width: 50%;" type="number" id="edit-margin_top" value="0" onchange="edit('style', this.value+'px', 'top', 1)"/>
                     <input style="float: right;" type="checkbox" id="edit-margin_top-percent" onchange="setPercentMode2(event)"></input>
                     <p style="float: right; margin: 0px;">%</p>
                 </div>
-                <div style="width: 90%; display: block; overflow: hidden;" >margin_left:<input style="float: right; width: 50%;" type="number" id="edit-margin_left" value="0" onchange="edit('style', document.getElementById('edit-margin_left').value+'px', 'left', 1)" />
+                <div style="width: 90%; display: block; overflow: hidden;" >margin_left:<input style="float: right; width: 50%;" type="number" id="edit-margin_left" value="0" onchange="edit('style', this.value+'px', 'left', 1)" />
                     <input style="float: right;" type="checkbox" id="edit-margin_left-percent" onchange="setPercentMode(event)"></input>
                     <p style="float: right; margin: 0px;">%</p>
                 </div>
-                <div style="width: 90%; display: block; overflow: hidden;" >margin_right:<input style="float: right; width: 50%;" type="number" id="edit-margin_right" value="0" onchange="edit('style', document.getElementById('edit-margin_right').value+'px', 'left', -1)" />
+                <div style="width: 90%; display: block; overflow: hidden;" >margin_right:<input style="float: right; width: 50%;" type="number" id="edit-margin_right" value="0" onchange="edit('style', this.value+'px', 'left', -1)" />
                     <input style="float: right;" type="checkbox" id="edit-margin_right-percent" onchange="setPercentMode(event)"></input>
                     <p style="float: right; margin: 0px;">%</p>
                 </div>
-                <div style="width: 90%; display: block; overflow: hidden;" >margin_bottom:<input style="float: right; width: 50%;" type="number" id="edit-margin_bottom" value="0" onchange="edit('style', document.getElementById('edit-margin_bottom').value+'px', 'top', -1)" />
+                <div style="width: 90%; display: block; overflow: hidden;" >margin_bottom:<input style="float: right; width: 50%;" type="number" id="edit-margin_bottom" value="0" onchange="edit('style', this.value+'px', 'top', -1)" />
                     <input style="float: right;" type="checkbox" id="edit-margin_bottom-percent" onchange="setPercentMode2(event)"></input>
                     <p style="float: right; margin: 0px;">%</p>
                 </div>
@@ -56,12 +56,12 @@
                     <input id="locationInput" checked="true" type="checkbox" onclick="switchLocation()">custom</input>
                     <div id="customLoc" style="display: flex; flex-direction: row;">
                         x:
-                        <input id="edit-location-x" style="margin-left: 20px; width: 50px;" type="number" value="0" onchange="edit('style', document.getElementById('edit-location-x').value+'px', 'left', 0)"></intput>
+                        <input id="edit-location-x" style="margin-left: 20px; width: 50px;" type="number" value="0" onchange="edit('style', this.value+'px', 'left', 0)"></intput>
                         %
                         <input type="checkbox" id="edit-location-x-percent" style="margin-right: 10px;"></input>
                         , 
                         y:
-                        <input id="edit-location-y" style="margin-left: 20px; width: 50px;" type="number" value="0" onchange="edit('style', document.getElementById('edit-location-y').value+'px', 'top', 0)"></intput>
+                        <input id="edit-location-y" style="margin-left: 20px; width: 50px;" type="number" value="0" onchange="edit('style', this.value+'px', 'top', 0)"></intput>
                         %
                         <input type="checkbox" id="edit-location-y-percent" style="margin-right: 10px;"></input>
                     </div>
@@ -101,18 +101,32 @@
             </div>
 			<div style="width: 100%;" id="customEdit">
 			<!-- document.getElementById("Text_y6j9df").children[0].innerText -->
-				<div id="customEdit-content" style="width: 90%; display: block; overflow: hidden;">content:<input style="float: right; width: 50%;" type="text" id="edit-content" value="" onchange="editChild('innerText', document.getElementById('edit-content').value, '', 0)" /></div>
-                <div id="customEdit-font_size" style="width: 90%; display: block; overflow: hidden;">font_size:<input style="float: right; width: 50%;" type="number" id="edit-font_size" value="" onchange="editChild('style', document.getElementById('edit-font_size').value+'px', 'font-size', 0)" /></div>
+				<div id="customEdit-content" style="width: 90%; display: block; overflow: hidden;">content:<input style="float: right; width: 50%;" type="text" id="edit-content" value="" onchange="editChild('innerText', this.value, '', 0)" /></div>
+                <div id="customEdit-font_size" style="width: 90%; display: block; overflow: hidden;">font_size:<input style="float: right; width: 50%;" type="number" id="edit-font_size" value="" onchange="editChild('style', this.value+'px', 'font-size', 0)" /></div>
+                <div id="customEdit-bold" style="width: 90%; display: block; overflow: hidden;">bold:<input style="float: right; width: 50%;" type="checkbox" id="edit-bold" value="" onchange="editChild('style', this.checked? 'bold' : 'normal', 'font-weight', 0)" /></div>
                 <div id="customEdit-mode" style="width: 90%; display: block; overflow: hidden;">mode:
-                    <select id="edit-mode" onchange="editImgMode(document.getElementById('edit-mode').value)">
+                    <select style="width: 50%; float: right;" id="edit-mode" onchange="editImgMode(this.value); alert('not implemented yet!');">
                         <option>stretch</option>
                         <option>zoom</option>
                         <option>auto_size</option>
                         <option>center</option>
                     </select>
                 </div>
+                <div id="customEdit-text_align" style="width: 90%; display: block; overflow: hidden;">text_align:
+                    <select style="width: 50%; float: right;" id="edit-text_align" onchange="editTextAlign(this.value); alert('not implemented yet!');">
+                        <option>top</option>
+                        <option>top_left</option>
+                        <option>top_right</option>
+                        <option>bottom</option>
+                        <option>bottom_left</option>
+                        <option>bottom_right</option>
+                        <option>left</option>
+                        <option>right</option>
+                        <option>center</option>
+                    </select>
+                </div>
                 
-                <div id="customEdit-src" style="width: 90%; display: block; overflow: hidden;">src:<input style="float: right; width: 50%;" type="number" id="edit-font_size" value="" onchange="editChild('src', document.getElementById('edit-src').value, '', 0)" />
+                <div id="customEdit-src" style="width: 90%; display: block; overflow: hidden;">src:<input style="float: right; width: 50%;" type="text" id="edit-src" value="" onchange="editSrc(this.value)" />
                 <img src="./assets/add.png" style="float: right; width: 20px; height: 20px;" onclick="document.getElementById('iconSelector').style.display = 'block';"></div>
             </div>
 
@@ -131,9 +145,10 @@
     
     <button id="addElement" onclick="createDraggableElement('Text')">Add Draggable Element</button>
     <button id="build">Build</button>
-    <pre id="pseudocode"></pre>
+    <pre id="layout"></pre>
 
     <div id="iconSelector" style="flex-direction: center; display: none; background: grey; width: 100%; height: 100%; position: absolute; z-index: 9999999; opacity: 0.9; top: 0px; left: 0px;">
+        <img src="./assets/cross.png" onclick="document.getElementById('iconSelector').style.display = 'none'" style="position: absolute; top: 10px; right: 10px;">
         <h2 style="margin-top: 20px; margin-left: 20px;">theme icon</h2>
         <div id="themeIconsList" style="overflow-x: hidden; align-items: center; justify-content: center; overflow-y: scroll; display: flex; flex-direction: row; flex-wrap: wrap;">
             <!-- <div class="themeIconItem">
@@ -155,11 +170,11 @@
                 var iconName = name.replace(".png", "");
                 if(!name.endsWith('Zone.Identifier')) {
                     document.getElementById('themeIconsList').innerHTML += `
-<div class="themeIconItem" onclick="setThemeIcon(`+iconName+`)">
+<div class="themeIconItem" onclick="setThemeIcon('`+iconName+`')">
     <img style="width: 50%; height: 50%;" src="`+url+`">
     <h3 style="margin: 0px;">`+iconName+`</h3>
 </div>`;
-                    console.log(name, url);
+                    add_iconsList(iconName, url);
                 }
                 
             }
