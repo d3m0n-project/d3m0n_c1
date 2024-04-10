@@ -264,7 +264,7 @@ function loadEdit(type) {
 	hideCustomEdits();
 	
 	
-    if(!type in Controls) {
+    if(!Controls.includes(type)) {
         alert("Invalid control type");
         return;
     }
@@ -308,7 +308,7 @@ function createDraggableElement(type) {
     draggable.style.width = Controls[type]["defaultWidth"]+"px";
     draggable.style.height = Controls[type]["defaultHeight"]+"px";
 
-    if(!type in Controls) {
+    if(!Controls.includes(type)) {
         alert("Invalid Control type!");
         return;
     }
@@ -411,9 +411,13 @@ function createDraggableElement(type) {
         //     }
         // });
     });
+
+    return draggable;
 }
 buildButton.addEventListener('click', () => {
-    console.log(generateLayout(draggables));
+    var layout = generateLayout(draggables);
+    console.log(layout);
+    downloadfile("app.layout", layout);
     // layoutElement.textContent = generateLayout(draggables);
 });
 function generateLayout(draggables) {
@@ -472,6 +476,116 @@ Window:
     // });
     return layout;
 }
+
+function importLayout()
+{
+	//import file
+	var input = document.createElement('input');
+	input.type = 'file';
+	
+	input.onchange = e => { 
+		var files = e.target.files;
+		var file = files[0];           
+		var reader = new FileReader();
+		// read file
+		reader.onload = function(event) 
+		{
+			dropZone.innerHTML="";
+			
+			layout=event.target.result;
+            
+            // parse layout to delete new lines
+            layout=layout.replaceAll(";\n", ";");
+            layout=layout.replaceAll(";\r\n", ";");
+            layout=layout.replaceAll(":\n", ":");
+            layout=layout.replaceAll(":\r\n", ":");
+
+            // console.log(layout);
+
+            lines = layout.split("\n");
+
+            for(i=0; i<lines.length; i++)
+            {
+                if (lines[i].startsWith('#') || lines[i].trim() == "")
+                    continue;
+
+                
+
+                let controlName = lines[i].split(':')[0];
+                var controlArgs = lines[i].split(':')[1].split(';');
+
+                console.log(controlName+" new control "+controlArgs);
+
+                currentID = "dropZone";
+
+                // add new elements
+                if(controlName != "Window") {
+                    if(controlName == undefined) {
+                        alert("Invalid Control type ("+controlName+")");
+                        continue;
+                    }
+                    // creates a new element
+                    var newControl = createDraggableElement(controlName);
+                    
+                    currentID = newControl.id;
+                }
+    
+                for(j=0; j<controlArgs.length-1;  j++)
+                {
+                    var controlArgName = controlArgs[j].split('=')[0].trim().trimStart('"').trimEnd('"');
+                    var controlArgValue = controlArgs[j].split('=')[1].trim();
+                    controlArgValue = controlArgValue.replaceAll('"', "");
+                    
+                    console.log(controlArgName+" => "+controlArgValue);
+                    
+                    switch(controlArgName) { 
+                        case "content":
+                            editChild("innerHTML", controlArgValue, "", 0, false);
+                            break;
+                        case "font_size":
+                            editChild("style", controlArgValue+"px", "fontSize", 0, false);
+                            break;
+                        case "color":
+                            editChild("style", controlArgValue, "color", 0, false);
+                            break;
+                        case "font_size":
+                            edit("style", controlArgValue, "background", 0, false);
+                            break;
+                        case "location":
+                            if(controlArgValue.includes(",")) {
+                                x=controlArgValue.split(",")[0].replaceAll(" ", "");
+                                y=controlArgValue.split(",")[1].replaceAll(" ", "");
+                                edit("left", x+"px", "", 0, false);
+                                edit("top", y+"px", "", 0, false);
+                            } else {
+                                document.getElementById("edit-location").selected = controlArgValue;
+                            }
+                            
+                            break;
+                        case "font_size":
+                            edit("style", controlArgValue, "background", 0, false);
+                            break;
+                    }
+
+                    // document.getElementById(controlId)[]
+                    if(controlArgValue.trimStart('"').trimEnd('"') == "true" || controlArgValue.trimStart('"').trimEnd('"') == "false") {
+                        alert("checkbox detected "+controlArgValue);
+                    }
+                }
+                // console.log(lines[i]);
+            }
+            
+
+
+            // console.log(layout);
+		}
+		reader.readAsText(file)
+	}
+	
+	
+	input.click();
+}
+
 function debug(x, y) {
     // document.body.innerHTML += "<div style='z-index: 9999; width: 5px; height: 5px; background: red; top: "+y+"px; left: "+x+"px; display: flex; position: absolute;'></div>"
 }
@@ -479,10 +593,14 @@ function debug(x, y) {
 function rgbToHex(rgb) {
     // This function converts an RGB color format to Hex color format
     var rgbArray = rgb.match(/\d+/g); // Extract numerical values from the RGB(A) format
-    return "#" + rgbArray.map(function(bit) {
+    to_return = "#" + rgbArray.map(function(bit) {
       bit = parseInt(bit).toString(16); // Convert each number to hexadecimal
       return bit.length === 1 ? "0" + bit : bit; // Add a leading zero if necessary
     }).join('');
+    if(to_return.length > 7) {
+        to_return.slice(0, -4);
+    }
+    return to_return;
 }
 
 function getKeyByValue(map, searchValue) {
@@ -492,4 +610,16 @@ function getKeyByValue(map, searchValue) {
       }
   }
   return null; // Return null if the value is not found in the map
+}
+function downloadfile(filename, text) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
 }
