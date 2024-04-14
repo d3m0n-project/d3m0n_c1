@@ -264,7 +264,7 @@ function loadEdit(type) {
 	hideCustomEdits();
 	
 	
-    if(!Controls.includes(type)) {
+    if(!type in Controls) {
         alert("Invalid control type");
         return;
     }
@@ -308,7 +308,7 @@ function createDraggableElement(type) {
     draggable.style.width = Controls[type]["defaultWidth"]+"px";
     draggable.style.height = Controls[type]["defaultHeight"]+"px";
 
-    if(!Controls.includes(type)) {
+    if(!type in Controls) {
         alert("Invalid Control type!");
         return;
     }
@@ -516,7 +516,7 @@ function importLayout()
 
                 console.log(controlName+" new control "+controlArgs);
 
-                currentID = "dropZone";
+                currentID = "drop_zone";
 
                 // add new elements
                 if(controlName != "Window") {
@@ -548,7 +548,7 @@ function importLayout()
                         case "color":
                             editChild("style", controlArgValue, "color", 0, false);
                             break;
-                        case "font_size":
+                        case "bg_color":
                             edit("style", controlArgValue, "background", 0, false);
                             break;
                         case "location":
@@ -558,19 +558,31 @@ function importLayout()
                                 edit("left", x+"px", "", 0, false);
                                 edit("top", y+"px", "", 0, false);
                             } else {
+                                var event = new Event('change');
+                                Object.defineProperty(event, 'target', { value: document.getElementById("edit-location"), enumerable: true });
                                 document.getElementById("edit-location").selected = controlArgValue;
+                                locationChange(event);
                             }
                             
                             break;
-                        case "font_size":
-                            edit("style", controlArgValue, "background", 0, false);
+                        case "height":
+                            if(controlArgValue.includes("%")) {
+                                controlArgValue = parseFloat(controlArgValue.replace("%", ""))/100*320;
+                            }
+                            edit("style", controlArgValue+"px", "height", 0, false);
+                            break;
+                        case "width":
+                            if(controlArgValue.includes("%")) {
+                                controlArgValue = parseFloat(controlArgValue.replace("%", ""))/100*240;
+                            }
+                            edit("style", controlArgValue+"px", "width", 0, false);
                             break;
                     }
 
                     // document.getElementById(controlId)[]
-                    if(controlArgValue.trimStart('"').trimEnd('"') == "true" || controlArgValue.trimStart('"').trimEnd('"') == "false") {
-                        alert("checkbox detected "+controlArgValue);
-                    }
+                    // if(controlArgValue.trimStart('"').trimEnd('"') == "true" || controlArgValue.trimStart('"').trimEnd('"') == "false") {
+                    //     alert("checkbox detected "+controlArgValue);
+                    // }
                 }
                 // console.log(lines[i]);
             }
