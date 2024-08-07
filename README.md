@@ -30,7 +30,7 @@ battery autonomy: 0h
 
 
 ### 📡 Wireless
-2.4Ghz radio frequency can be used with a range of protocols such as
+sub-GHz radio frequency can be used with a range of protocols such as
 - Bluetooth
 - Wifi
 - RF peripherals (keyboards/mouses)
