@@ -76,6 +76,10 @@ Pins for hardware developement and debug will be added on the back of d3m0n phon
 
 AND MAYBE OWN MOTHERBOARD MADE FROM SCRATCH using ARM micoprocessors
 
+## Star history
+![star-history](https://api.lucabubi.me/chart?username=d3m0n-project&repository=d3m0n_c1)
+
+
 
 ### Special thanks to vertydagenius for his help
 
