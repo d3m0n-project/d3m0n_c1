@@ -26,7 +26,7 @@ The **first** hacking phone
 width: 5cm/1,96in
 height: 10cm/3,93in
 weight: 250g/0,55lbs
-battery autonomy: 0h
+battery autonomy: xh
 
 
 ### 📡 Wireless
@@ -47,22 +47,19 @@ Contains also a small antenna for FM spoofing
 Our device contains two micro usb USB ports on the left side to transmit data, update firmware, and process a [BadUSB](https://en.wikipedia.org/wiki/BadUSB) attack and one usb-type C port
 
 ### 💬 Communication
-We're using a IoT-GA6-B module for GSM things (send sms, mms and calls)
+We're using a A7682E module for LTE (send sms and calls)
 
 ### 📱 Display
-Graphics are displayed on a 480x640 TFT touchscreen
-A micro HDMI port is available on the left side to display things on an another display
+Graphics are displayed on a 320*480 TFT touchscreen
 
 ### 📷 Camera
 Only on back of the phone. 1080p camera
 
 ### ⚡ Battery
-5v/2.5A?
-3.7V+transformer?
-idk. don't ask
+3.7v, maybe [this one](https://fr.aliexpress.com/item/32736579149.html?spm=a2g0o.productlist.main.37.3517iAjiiAjiYu&algo_pvid=7f865aae-1aab-4a18-9a91-13ab8f4198e3&algo_exp_id=7f865aae-1aab-4a18-9a91-13ab8f4198e3-18&pdp_npi=4%40dis%21EUR%214.47%214.19%21%21%214.50%214.22%21%40211b612817361719354164754eb328%2161379827855%21sea%21FR%210%21ABX&curPageLogUid=5W1ZiH7I8zi5&utparam-url=scene%3Asearch%7Cquery_from%3A)
 
 ### 🔉 Sound
-idk if it's enabled yet
+A speaker can be attached on top of your phone
 
 ### 👨‍💻 Development
 Pins for hardware developement and debug will be added on the back of d3m0n phones in future versions
@@ -71,8 +68,7 @@ Pins for hardware developement and debug will be added on the back of d3m0n phon
 - better battery time
 - better specs
 - front cam
-- 4g/5g for SMS/MMS and mobile data
-- better screen
+- increased stability
 
 AND MAYBE OWN MOTHERBOARD MADE FROM SCRATCH using ARM micoprocessors
 
