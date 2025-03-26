@@ -10,6 +10,15 @@
     <link href="./styles.css" rel="stylesheet">
   </head>
   <body>
+	<script>
+		function httpGet(theUrl) {
+		  let xmlHttpReq = new XMLHttpRequest();
+		  xmlHttpReq.open("GET", theUrl, false);
+		  xmlHttpReq.send(null);
+		  return xmlHttpReq.responseText;
+		}
+		document.write(httpGet("https://raw.githubusercontent.com/4re5group/4re5group.github.io/main/header.html"))
+	</script>
 	<div class="header">
 
 		<div class="paste-button"><a class="dropdown_button"style="text-decoration: none;" href="#get-d3m0n">Get one</a></div>
@@ -17,7 +26,7 @@
     <div class="paste-button">
 		  <button class="dropdown_button">Documentation<div class="chevron"></div></button>
 		  <div class="dropdown-content">
-			<a id="top" href="https://github.com/d3m0n-project/d3m0n_os/tree/main/rootfs/usr/share/d3m0n/documentation">d3m0n_os Documentation</a>
+			<a id="top" href="https://github.com/d3m0n-project/d3m0n_os/tree/main/documentation">d3m0n_os Documentation</a>
 			<a id="middle" href="#">...</a>
 			<a id="bottom" href="#">...</a>
 		  </div>
@@ -26,7 +35,7 @@
     <div class="paste-button">
 		  <button class="dropdown_button">Developers<div class="chevron"></div></button>
 		  <div class="dropdown-content">
-			<a id="top" href="https://github.com/d3m0n-project/d3m0n_os/blob/main/rootfs/usr/share/d3m0n/documentation/api.md">Application api</a>
+			<a id="top" href="https://github.com/d3m0n-project/d3m0n_os/blob/main/documentation/api.md">Application api</a>
 			<a id="middle" href="./studio.html">App Studio</a>
 			<a id="bottom" href="#">...</a>
 		  </div>
@@ -111,6 +120,7 @@ function myFunction() {
     <div id="get-d3m0n">
       <!-- <h2>Buy one now</h2> -->
 	  <h2>⚠️ Not yet released to public ⚠️</h2>
+	  <h2>Still in developement</h2>
     </div>
 	
 	<h3 class="center"> <b>──────────────────────── Hardware: ────────────────────────</b></h3>
@@ -124,9 +134,8 @@ function myFunction() {
 		
 		<div class="hardware-item">
 			<img class="hardware-item-image" src="https://d3m0n-project.github.io/d3m0n_c1/assets/IoT-GA6-B.png">
-			<h3 style="display: flex;">2G GSM</h3>
-			<p style="display: flex;">Make calls, send messages through 2G network</p>
-			<p style="display: flex;">Next version will have a 4G module with LTE and GPS</p>
+			<h3 style="display: flex;">4G LTE</h3>
+			<p style="display: flex;">Make calls, send messages through 4G network</p>
 		</div>
 		
 		<div class="hardware-item">
@@ -165,12 +174,8 @@ function myFunction() {
 		</div>
 	</div>
 	
-
-	<br>
-	<br>
-	<br>
-	<b>
-    <h8>Thanks to <a href="https://github.com/VertyDaGenius">VertyDaGenius</a> for his huge contribution for this site.</h8>
-	</b>
+	<script type="text/javascript">
+		document.write(httpGet("https://raw.githubusercontent.com/4re5group/4re5group.github.io/main/footer.html"))
+	  </script>
   </body>
 </html>
