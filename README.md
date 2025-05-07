@@ -69,6 +69,8 @@ Pins for hardware developement and debug will be added on the back of d3m0n phon
 - better specs
 - front cam
 - increased stability
+- thinner and more aesthetic
+- better performances (+RAM and better CPU) + OPTIMIZATION 
 
 AND MAYBE OWN MOTHERBOARD MADE FROM SCRATCH using ARM micoprocessors
 
