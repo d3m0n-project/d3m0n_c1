@@ -10,7 +10,7 @@
     <link href="./styles.css" rel="stylesheet">
   </head>
   <body>
-	<script>
+	<script> 
 		function httpGet(theUrl) {
 		  let xmlHttpReq = new XMLHttpRequest();
 		  xmlHttpReq.open("GET", theUrl, false);
@@ -19,26 +19,34 @@
 		}
 	</script>
 	<div class="header">
+		<img id="iconbanner" src="./assets/banner.png" style="width: 130px; position: absolute; left: 30px;">
+		<div>
+			<div class="paste-button">
+				<a class="dropdown_button"style="text-decoration: none;" href="#get-d3m0n">Get one</a>
+			</div>
+			<div class="paste-button">
+				<button class="dropdown_button">Documentation<div class="chevron"></div></button>
+				<div class="dropdown-content">
+					<a id="top" href="https://github.com/d3m0n-project/d3m0n_os/tree/main/documentation">d3m0n_os Documentation</a>
+				</div>
+			</div>
 
-		<div class="paste-button"><a class="dropdown_button"style="text-decoration: none;" href="#get-d3m0n">Get one</a></div>
+			<div class="paste-button">
+				<button class="dropdown_button">Developers<div class="chevron"></div></button>
+				<div class="dropdown-content">
+					<a id="top" href="https://github.com/d3m0n-project/d3m0n_os/blob/main/documentation/api.md">Application api</a>
+					<a id="middle" href="./studio.html">App Studio</a>
+				</div>
+			</div>
 
-    <div class="paste-button">
-		  <button class="dropdown_button">Documentation<div class="chevron"></div></button>
-		  <div class="dropdown-content">
-			<a id="top" href="https://github.com/d3m0n-project/d3m0n_os/tree/main/documentation">d3m0n_os Documentation</a>
-			<a id="middle" href="#">...</a>
-			<a id="bottom" href="#">...</a>
-		  </div>
+			<div class="paste-button">
+				<button class="dropdown_button">About<div class="chevron"></div></button>
+				<div class="dropdown-content">
+					<a id="top" href="./studio.html">App Studio</a>
+				</div>
+			</div>
 		</div>
-
-    <div class="paste-button">
-		  <button class="dropdown_button">Developers<div class="chevron"></div></button>
-		  <div class="dropdown-content">
-			<a id="top" href="https://github.com/d3m0n-project/d3m0n_os/blob/main/documentation/api.md">Application api</a>
-			<a id="middle" href="./studio.html">App Studio</a>
-			<a id="bottom" href="#">...</a>
-		  </div>
-		</div>
+		
 
 	</div>
 
@@ -57,62 +65,14 @@
 		<li><span>Hack easily.</span></li>
       </ul>
     </h1>
-	
-	<span style="margin: 20px">
-		<span onclick="myFunction();" id="toggle">
-			<input type="Submit" value="Light Mode Toggle">
-		</span>
-	</span>	
 
-
-	<script>
-var isDynamicTextVisible = false; 
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("light-mode");
-    if (!isDynamicTextVisible) {
-        var style = document.createElement('style');
-        style.innerHTML = `
-            .dynamictxts li span::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                height: 100px;
-                width: 100%;
-                background: #bfbfbf;
-                border-left: 2px solid white;
-                animation: typing 3s steps(10) infinite;
-            }
-        `;
-        document.head.appendChild(style);
-    } else {
-        var styleElement = document.querySelector('style');
-        if (styleElement) {
-            document.head.removeChild(styleElement);
-        }
-    }
-    isDynamicTextVisible = !isDynamicTextVisible;
-}
-	</script>
-
-    <h3 class="center">
-    The d3m0n Phone is a multi functioning phone made for hackers.
-    </h3>
+    <h3 class="center rainbow_title">Multi functioning phone made for hackers.</h3>
     
     <h3 class="center"><b> ──────────────────────── Features: ──────────────────────── </h3></b>
 	
 	<ol class="features">
-		<li>It's open source! <a href="https://github.com/d3m0n-project/d3m0n_os" class="btntext">Source code</a></li>
 		
-		<li>Radio hacking (433mHz) and FM spoofing (from 87,5MHz to 108 MHz)</li>
 		
-		<li>Wi-Fi pentesting (Deauth attacks, Password Cracking, and more!),</li>
-		
-		<li>Bluetooth sniffing,</li>
-		
-		<li>Data transmission port to allow a badusb attack!</li>
-		
-		<li>Infrared led to capture & emulate signals</li>
 		
 	</ol>
     <h3 class="center"><b>───────────────────────────────────────────────────────────</b></h3>

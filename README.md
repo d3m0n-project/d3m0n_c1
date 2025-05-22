@@ -26,7 +26,7 @@ The **first** hacking phone
 width: 5cm/1,96in
 height: 10cm/3,93in
 weight: 250g/0,55lbs
-battery autonomy: xh
+battery autonomy: not tested yet
 
 
 ### 📡 Wireless
