@@ -14,7 +14,9 @@ LCD_RST        = 15  # Reset pin
 LCD_BACKLIGHT  = 25  # Backlight control pin
 
 SPI_SPEED = 50000000 # SPI speed 50MHz
-spi = SPI(0, baudrate=SPI_SPEED)
+spi = SPI(0, sck=Pin(2), mosi=Pin(3), baudrate=SPI_SPEED)
+
+#spi = SPI(0, baudrate=SPI_SPEED)
 
 def LCD_LED(i):
     print("backlight "+str(i))
@@ -246,4 +248,3 @@ if __name__ == "__main__":
     LCD_Clear(MAGENTA)
     print("clear done")
     Pin("LED", Pin.OUT).off()
-
