@@ -13,6 +13,8 @@ LCD_RS         = 14  # Register/Data select pin
 LCD_RST        = 15  # Reset pin
 LCD_BACKLIGHT  = 25  # Backlight control pin
 
+# ledk need to be wired to GND
+
 SPI_SPEED = 50000000 # SPI speed 50MHz
 spi = SPI(0, sck=Pin(2), mosi=Pin(3), baudrate=SPI_SPEED)
 
