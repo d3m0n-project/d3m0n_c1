@@ -17,6 +17,7 @@ LCD_BACKLIGHT  = 25  # Backlight control pin
 
 SPI_SPEED = 50000000 # SPI speed 50MHz
 spi = SPI(0, sck=Pin(2), mosi=Pin(3), baudrate=SPI_SPEED)
+# TODO use dma
 
 #spi = SPI(0, baudrate=SPI_SPEED)
 
