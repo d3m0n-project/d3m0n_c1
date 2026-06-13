@@ -5,9 +5,6 @@ USE_HORIZONTAL = 0
 LCD_W          = 320
 LCD_H          = 480
 
-LCD_SPI_SCK    = 0
-LCD_SPI_MOSI   = 0
-
 LCD_CS         = 1   # Chip select pin
 LCD_RS         = 14  # Register/Data select pin
 LCD_RST        = 15  # Reset pin
