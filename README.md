@@ -56,7 +56,7 @@ Graphics are displayed on a 320*480 TFT touchscreen
 Only on back of the phone. 1080p camera
 
 ### ⚡ Battery
-3.7v, maybe [this one](https://fr.aliexpress.com/item/32736579149.html?spm=a2g0o.productlist.main.37.3517iAjiiAjiYu&algo_pvid=7f865aae-1aab-4a18-9a91-13ab8f4198e3&algo_exp_id=7f865aae-1aab-4a18-9a91-13ab8f4198e3-18&pdp_npi=4%40dis%21EUR%214.47%214.19%21%21%214.50%214.22%21%40211b612817361719354164754eb328%2161379827855%21sea%21FR%210%21ABX&curPageLogUid=5W1ZiH7I8zi5&utparam-url=scene%3Asearch%7Cquery_from%3A)
+3.7v, 2000mAh 103450 Lithium Ion Battery
 
 ### 🔉 Sound
 A speaker can be attached on top of your phone
