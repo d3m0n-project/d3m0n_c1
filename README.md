@@ -101,8 +101,6 @@ Useful resources:
 
 - [d3m0n OS repository](https://github.com/d3m0n-project/d3m0n_os)
 - [SDK documentation](https://d3m0n.4re5.com/d3m0n_os/)
-- [App Studio](https://d3m0n.4re5.com/studio/)
-- [Device Emulator](https://d3m0n.4re5.com/emulator/)
 - [Application examples](https://github.com/d3m0n-project/d3m0n_os/tree/main/rootfs/usr/share/applications)
 
 ### 🛠️ Building d3m0n OS
