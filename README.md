@@ -279,7 +279,7 @@ Additional 3D models and manufacturing files will be documented as they become a
 | d3m0n_c1 repository | [GitHub](https://github.com/d3m0n-project/d3m0n_c1) |
 | d3m0n OS repository | [GitHub](https://github.com/d3m0n-project/d3m0n_os) |
 | SDK documentation | [Documentation](https://d3m0n.4re5.com/d3m0n_os/) |
-| Discord | [Join the community](https://discord.com/invite/Rfb5ajz7cM) |
+| Discord | [Join the community](http://discord.com/invite/Rfb5ajz7cM) |
 | Reddit | [r/d3m0nproject](https://www.reddit.com/r/d3m0nproject/) |
 
 ---
